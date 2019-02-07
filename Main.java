@@ -2,7 +2,6 @@ import java.util.*;
 
 public class Main {
 	public static void main(String[] args) {
-		String[] validChars = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "," };
 		boolean legalMove = false;
 		Scanner s = new Scanner(System.in);
 		System.out.println("Enter Board Size: ");
