@@ -39,10 +39,6 @@ public class Main {
 			Scanner move = new Scanner(System.in);
 			while (legalMove == false) {
 				String input = move.next();
-				for (int i = 0; i < input.length() - 1; i++) {
-
-				}
-
 				int x = (Integer.parseInt(input.substring(0, input.indexOf(",")))) - 1;
 				int y = (Integer.parseInt(input.substring(input.indexOf(",") + 1, input.length()))) - 1;
 				if (placementErrorCheck(board, x, y) == true) {
