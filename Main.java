@@ -3,15 +3,17 @@ import java.util.*;
 public class Main {
 	public static void main(String[] args) {
 		boolean legalMove = false;
+		
 		Scanner s = new Scanner(System.in);
 		System.out.println("Enter Board Size: ");
 		int size = s.nextInt(); // get size of board
-		String[][] board = new String[size][size];
+		String[][] board = new String[size][size]; // Ex. 3 by 3 (Creates a square)
 		for (int i = 0; i < size; i++) { // setup for blank board
 			for (int j = 0; j < size; j++) {
 				board[i][j] = " ";
 			}
 		}
+		
 		int turn = 1;
 		while (checkWin(board) != true || checkTie(board, turn) != true) { // continues running if the game isn't over
 			String str = "";
