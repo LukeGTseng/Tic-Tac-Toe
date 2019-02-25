@@ -29,14 +29,15 @@ public class Main {
 			} else if (checkTie(board, turn) == true) {
 				System.out.println("The game is a Tie!");
 				break;
+			// If not a win nor a tie, keep playing (Depending on whose turn it is)
 			} else if (turn % 2 == 1) {
-
 				System.out.println("Player 1, your move: (e.g. 1,3)");
 				str = "X";
 			} else if (turn % 2 == 0) {
 				System.out.println("Player 2, your move: (e.g. 1,3)");
 				str = "O";
 			}
+			
 			Scanner move = new Scanner(System.in);
 			while (legalMove == false) {
 				String input = move.next();
@@ -53,7 +54,7 @@ public class Main {
 		}
 
 	}
-
+	// Luke
 	public static void createBoard(String[][] board) {
 		int size = board.length;
 		for (int i = 0; i < size; i++) {
@@ -71,23 +72,27 @@ public class Main {
 		}
 		System.out.println("+");
 	}
-	
+	// Tasbeet 
 	public static boolean checkWin(String[][] board) { // using all the check methods to checking for win
 		int size = board.length;
 		// rows
 		if (checkRow(board, size) == true) {
 			return true;
+		// columns
 		} else if (checkColumn(board, size) == true) {
-			return true;			
+			return true;
+		// diagonal
 		} else if (checkDiag(board, size) == true) {
 			return true;
+		// other diagonal
 		} else if (checkOtherDiag(board, size) == true) {
 			return true;
 		} else {
 			return false;
 		}
 	}
-
+	
+	// Tasbeet
 	public static boolean checkRow(String[][] board, int size) { //checks each row for win
 		String[] list = new String[size];
 		for (int i = 0; i < size; i++) {
@@ -100,7 +105,7 @@ public class Main {
 		}
 		return false;
 	}
-
+	// Tasbeet 
 	public static boolean checkDiag(String[][] board, int size) { // checks up to down diagonal for win
 		String[] list = new String[size];
 		for (int i = 0; i < size; i++) {
@@ -111,7 +116,8 @@ public class Main {
 		}
 		return false;
 	}
-
+	
+	// Tasbeet  
 	public static boolean checkOtherDiag(String[][] board, int size) { // checks down to up diagonal for win
 		String[] list = new String[size];
 		int j = size-1;
@@ -126,7 +132,7 @@ public class Main {
 		}
 		return false;
 	}
-
+	// Tasbeet
 	public static boolean checkColumn(String[][] board, int size) { // checks each column for win
 		String[] list = new String[size];
 		for (int i = 0; i < size; i++) {
@@ -139,7 +145,7 @@ public class Main {
 		}
 		return false;
 	}
-
+	// Tasbeet 
 	public static boolean checkTie(String[][] board, int turn) { // checks tie based on if every space is used using turns
 		int size = board.length;
 		size = size * size;
@@ -149,7 +155,7 @@ public class Main {
 			return false;
 		}
 	}
-
+	// Luke
 	public static boolean placementErrorCheck(String[][] board, int x, int y) { // invalid 
 		int size = board.length;
 		if (x >= size || y >= size) {
